@@ -35,6 +35,21 @@ protected:
     SNAKE *beforeTail;                          //尾巴節點的前一個節點，方便移動
     int directions;
 };
+ void draw_Snake() //畫蛇
+ {
+ for (int k = 0; k < snake.size(); k++)
+  {
+ gotoxy(snake[k].position_x,snake[k].position_y);
+ cout << snake[k].body;
+  }
+ }
+ void clear_Tail() 
+ {
+ int k = snake.size() - 1;
+ gotoxy(snake[k].position_x,snake[k].position_y);
+ cout << " "; //蛇每移動一次（即一格），就把上一次畫出來的蛇尾擦掉
+ }
+
 //蛇類的成員函式
 void SnakeSprite::turnDown() {
     //向下轉頭
