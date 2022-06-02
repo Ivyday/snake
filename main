@@ -15,23 +15,47 @@ int main() {
 	}
   //邊框
 }
- char direction;
+#include <iostream>
+#include <iomanip>
+#include "Food.h"
+#include "Snake.h"
+using namespace std;
+int main() {
+    char arr[10][10];
+    for (int i = 0; i < 10; i++) {
+        for (int j = 0; j < 10; j++) {
+            if (i == 0 || i == 9 || j == 0 || j == 9)
+                cout << setw(2) << "*";
+            else
+                cout << setw(2) << " ";
+
+        }
+        cout << endl;
+    }
+    //邊框
+    char direction="w";
+    
     for (int i = 0;i < 10000000;i++) {
         mapfood();
-        locationFood();
-        snakeEatFood();
+        drawThisSnake();
         cin >> direction;
-        if (direction == "a"||direction=="A") {
+        if (direction == "a" || direction == "A") {
             turnLeft();
         }
-        else if (direction == "s"||direction=="S") {
+        else if (direction == "s" || direction == "S") {
             turnDown();
         }
-        else if (direction == "d"||direction=="D") {
+        else if (direction == "d" || direction == "D") {
             turnRight();
         }
-        else if (direction == "w"||direction=="W") {
+        else if (direction == "w" || direction == "W") {
             turnUp();
         }
-
+        if (locationFood() == 0) {
+            break;
+         }
+        IsDeath();
+        snakeEatFood();
+        clear_Tail();
     }
+}
