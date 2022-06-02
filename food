@@ -40,7 +40,7 @@ bool locationFood(){
  }
  return 1;
  }
-bool snakeEatFood(){
+void snakeEatFood(){
     if (food_x == snake[0].position_x && food_y == snake[0].position_y);
     eat_Food = true;
 }
