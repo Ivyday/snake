@@ -1,0 +1,38 @@
+#include<iostream>
+#include "Snake.h"
+using namespace std;
+ class Food {
+    private:
+        bool eat_Food = false; //是否吃到食物
+        short food_x, food_y; //食物座標
+        Snake snake;
+    public:
+        Food();
+        Food(int x, int y);
+        void mapfood();
+        bool locationFood();
+        void snakeEatFood();
+    };
+
+    void Food::mapfood() { //畫食物
+        while (1)
+        {
+            food_x = rand() % (width - 4) + 2;
+            food_y = rand() % (height - 2) + 1;
+            if (locationFood() && food_x % 2 == 0)
+                break;
+        }
+    }
+    short(food_x, food_y);
+    bool Food::locationFood() { //判斷食物的座標是否合理
+        for (auto i : snake)
+        {
+            if (food_x == i.position_x && food_y == i.position_y)
+                return 0;
+        }
+        return 1;
+    }
+    void Food::snakeEatFood() { //判斷是否吃到食物
+        if (food_x == snake[0].position_x && food_y == snake[0].position_y);
+        eat_Food = true;
+    }
