@@ -1,5 +1,3 @@
-#ifndef snake
-#define snake
 struct SNAKE {
     bool IsSurvivor;            //當前結點是否存在（被畫）
     int coor_x;                 //節點橫座標
@@ -36,4 +34,4 @@ private:
     SNAKE* beforeTail;                          //尾巴節點的前一個節點，方便移動
     int directions;
 };
-#endif
+
