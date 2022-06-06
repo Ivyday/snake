@@ -16,29 +16,32 @@ int main() {
         cout << endl;
     }
     //邊框
-    char direction="w";
-    
-    while (direction==-1) {
-        mapfood();
-        drawThisSnake();
-        cin >> direction;
-        if (direction == "a" || direction == "A") {
-            turnLeft();
+        Snake snake;
+    Food food;
+    char d="w";
+    cin >> d;
+    while (d == -1) {
+        food.mapfood();
+        snake.drawThisSnake();
+        
+        if (d == "a" || d == "A") {
+            snake.turnLeft();
         }
-        else if (direction == "s" || direction == "S") {
-            turnDown();
+        else if (d == "s" || d == "S") {
+            snake.turnDown();
         }
-        else if (direction == "d" || direction == "D") {
-            turnRight();
+        else if (d == "d" || d == "D") {
+            snake.turnRight();
         }
-        else if (direction == "w" || direction == "W") {
-            turnUp();
+        else if (d == "w" || d == "W") {
+            snake.turnUp();
         }
-        if (locationFood() == 0) {
+        if (food.locationFood() == 0) {
             break;
-         }
-        IsDeath();
-        snakeEatFood();
-        clear_Tail();
+        }
+        cin >> d;
+        snake.IsDeath();
+        food.snakeEatFood();
+        snake.clear_Tail();
     }
 }
