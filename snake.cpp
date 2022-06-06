@@ -1,3 +1,5 @@
+#include "Snake.h"
+using namespace std;
 void Snake::drawThisSnake() //畫蛇
 {
     for (int k = 0; k < snake.size(); k++)
