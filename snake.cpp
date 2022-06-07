@@ -1,4 +1,5 @@
 #include <iostream>
+#include <windows.h>
 #include "Snake.h"
 using namespace std;
 void Snake::drawThisSnake() //畫蛇
@@ -58,8 +59,15 @@ void Snake::positionAction() {
     if (RIGHT == directions) {
         snakeHead->coor_x++;
     }
-    SNAKE* current = snakeHead;
-    int LEN = len;
+void gotoxy(int xpos, int ypos)
+{
+  COORD scrn;
+  HANDLE hOuput = GetStdHandle(STD_OUTPUT_HANDLE);
+  scrn.X = xpos; scrn.Y = ypos;
+  SetConsoleCursorPosition(hOuput,scrn);
+} 
+   SNAKE* current = snakeHead;
+   int LEN = len;
     for (int i = 1; i < len; i++) {
         current = snakeHead;
         for (int j = 1; j < LEN - 1 && len >= 3; j++) {
