@@ -34,5 +34,3 @@ private:
     SNAKE* beforeTail;                          //尾巴節點的前一個節點，方便移動
     int directions;
 };
-#endif
-
