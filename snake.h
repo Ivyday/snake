@@ -5,7 +5,7 @@ struct SNAKE
     bool IsSurvivor;            //當前結點是否存在（被畫）
     int coor_x;                 //節點橫座標
     int coor_y;                 //節點縱座標
-}
+};
 class Snake
 {
 public:
