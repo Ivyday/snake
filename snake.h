@@ -29,6 +29,7 @@ public:
     void IsDeath();                             //是否碰撞草叢，是蛇死亡返回true，否則返回false
     void getCurrentPosRect(RECT& rect);
     void getCurrentCoor(int& x, int& y);
+    void gotoxy();
 private:
     int len;                                    //蛇身長度_以塊為單位
     SNAKE* snakeHead;                           //蛇頭指標
