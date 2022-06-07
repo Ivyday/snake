@@ -1,3 +1,4 @@
+#include <iostream>
 #include "Snake.h"
 using namespace std;
 void Snake::drawThisSnake() //畫蛇
