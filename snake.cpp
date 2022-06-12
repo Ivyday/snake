@@ -59,7 +59,7 @@ void Snake::positionAction() {
     if (RIGHT == directions) {
         snakeHead->coor_x++;
     }
-void gotoxy(int xpos, int ypos)
+void Snake::gotoxy(int xpos, int ypos)
 {
   COORD scrn;
   HANDLE hOuput = GetStdHandle(STD_OUTPUT_HANDLE);
